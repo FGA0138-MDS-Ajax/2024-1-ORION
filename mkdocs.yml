@@ -1,14 +1,5 @@
 site_name: Documentação
 
-nav:
-  - Sobre: "index.md"
-  - Documento de Visão: "documento-visao/documento-visao.md"
-  - Documento de Requisitos: "documento-requisitos/documento-requisitos.md"
-  - Documento de Arquitetura: "documento-arquitetura/documento-arquitetura.md"
-  - Documento de Plano de Testes: "documento-plano-testes/documento-plano-testes.md"
-  - Atas de Reunião:
-    - Ata 1: "atas-reuniao/ata-reuniao-1.md"
-
 theme: 
   name: material
   language: pt
@@ -35,3 +26,12 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
+
+nav:
+  - Sobre: "index.md"
+  - Documento de Visão: "documento-visao/documento-visao.md"
+  - Documento de Requisitos: "documento-requisitos/documento-requisitos.md"
+  - Documento de Arquitetura: "documento-arquitetura/documento-arquitetura.md"
+  - Documento de Plano de Testes: "documento-plano-testes/documento-plano-testes.md"
+  - Atas de Reunião:
+    - Ata 1: "atas-reuniao/ata-reuniao-1.md"
