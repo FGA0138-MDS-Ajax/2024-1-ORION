@@ -1,0 +1,6 @@
+Para rodar no terminal é necessário utilizar os seguintes comandos:
+ npm init
+ npm install express mysql2 body-parser cors
+ npm install multer 
+ node server/server.js
+Adicionar os dados relacionados ao banco no documento db.js
