@@ -1,7 +1,7 @@
 site_name: Documentação
 
 nav:
-  - Instruções mkdocs: "index.md"
+  - Sobre: "index.md"
   - Documento de Visão: "documento-visao/documento-visao.md"
   - Documento de Requisitos: "documento-requisitos/documento-requisitos.md"
   - Documento de Arquitetura: "documento-arquitetura/documento-arquitetura.md"
@@ -9,5 +9,29 @@ nav:
   - Atas de Reunião:
     - Ata 1: "atas-reuniao/ata-reuniao-1.md"
 
-theme:
+theme: 
   name: material
+  language: pt
+  
+  palette:
+    - scheme: default 
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: orange
+
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: orange
+
+  features:
+    - content.code.annotate
+    - content.tabs.link
+    - header.autohide
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
