@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeSong</title>
+    <title>BeSong - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>
-        <h1>BeSong</h1>
+        <div class="logo">
+            <h1>BeSong</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="cadastro-musico.html">Cadastre-se</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="container">
-            <h2>Bem-vindo ao BeSong</h2>
-            <p>Cadastre-se como músico ou contratante e encontre músicos para seus eventos!</p>
-            <a href="cadastro-musico.html">Cadastro de Músico</a>
-            <a href="cadastro-contratante.html">Cadastro de Contratante</a>
-            <a href="login.html">Login</a>
-        </div>
+        <section class="hero">
+            <div class="hero-text">
+            
+                <p>BeSong</p>
+                <h2>Encontre o seu músico favorito</h2>
+                
+            </div>
+            <div class="hero-image">
+                <img src="img/tela-inicial.png" alt="Músicos">
+            </div>
+        </section>
+        <section class="content">
+            <div class="content-item">
+                <h3>O melhor da música aqui!</h3>
+                <p>Se posicione mostrando a sua arte e alcance os principais bares e restaurantes da sua região.</p>
+            </div>
+            <div class="content-item">
+                <h3>Contato direto com artistas exclusivos</h3>
+                <p>Um espaço aberto para o novo, encontre aqui novos talentos de acordo com um estilo musical novo sempre que desejar.</p>
+            </div>
+        </section>
     </main>
 </body>
 </html>
