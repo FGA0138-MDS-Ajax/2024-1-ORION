@@ -3,27 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
+    <title>BeSong</title>
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+
 </head>
 <body>
     <header>
-        <h1>BeSong</h1>
+        <div>BeSong</div>
     </header>
-    <main>
-        <div class="container">
-            <div id="musicoDetails">
-                <img id="musicoFoto" src="" alt="Foto do Músico">
-                <h2 id="musicoNome">Nome do músico</h2>
-                <p id="musicoEmail">E-mail</p>
-                <p id="musicoTelefone">Telefone</p>
-                <p id="musicoEstilo">Estilo musical</p>
-                <a id="musicoInstagram" href="" target="_blank">Instagram</a>
-                <div id="musicoYoutube"><a href="" ></a></div>
-            </div>
-            <a href="catalogo.html">Voltar</a>
+    <main> 
+      <div class="text-container">
+        <div class="text-div">
+          <h1>Liberdade Sinfonia</h1>
+          <h2>Banda, MPB</h2>
+      </div>
+
+      </div>
+            
+        <div class="video-div">
+            <iframe width="820" height="415" src="https://www.youtube.com/embed/CiNDsCwws0s?si=xDXiGMG4moWiT3w1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+
+        <div class="icons-div">
+            <button id="btn1" class="btn">
+              <a href="https://www.youtube.com/@LiberdadeSinfonia">
+                  <i class="fa-brands fa-youtube"></i>
+              </a>
+               </button>
+          <button id="btn2" class="btn">
+              <a href="https://www.instagram.com/liberdadesinfonia/">
+                  <i class="fa-brands fa-instagram"></i>
+              </a>
+          </button>
+          <button id="btn3">
+            <a href="https://wa.me/5561981484803">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            </button>
+
+        </div>
+
+<div class="container" id="c">
+  <div id="release-container">
+    <div class="text-div">
+        <p id="sobre">Sobre o artista</h1>
+        <p id="release">A banda Liberdade Sinfonia, composta por Luana Viana, Felipe Veríssimo e Letícia Sandes, cativa o público com arranjos únicos que mesclam influências do blues, rock, samba e MPB. Suas composições, permeadas por temas do cotidiano, refletem uma variedade de assuntos, tanto em suas melodias, compostas por voz, violoncelo, violão e percussão, quanto em suas letras. Além disso, a banda opera de forma independente, promovendo eventos culturais como parte de sua abordagem para disseminar seu trabalho gerando entretenimento gratuito na periferia</h2>
+    </div>
+
+   </div>
+
+   <div class="text-div" id="contato">
+    <p id="email">liberdadesinfonia@gmail.com</h1>
+    <p id="release">(61) 981484803</h2>
+</div>
+
+   <div class="image-container">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="project-img">
+              <img src="./img/foto_1.jpg" alt="Foto 01">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-img">
+              <img src="./img/foto_2.jpg" alt="Foto 02">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-img">
+              <img src="./img/foto_3.jpg" alt="Foto 03">
+            </div>
+          </div>
+        </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+   </div>
+
+</div>
+       
+      
+    
     </main>
-    <script src="script.js"></script>
+    
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/25a49455a9.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
+
+
