@@ -1,78 +1,26 @@
-document.getElementById('musicoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('musicoNome').value;
-    const email = document.getElementById('musicoEmail').value;
-    const estilo = document.getElementById('musicoEstilo').value;
-    const telefone = document.getElementById('musicoTelefone').value;
-    const instagram = document.getElementById('musicoInstagram').value;
-    const youtube = document.getElementById('musicoYoutube').value;
-    const portfolio = document.getElementById('musicoPortfolio').value;
-
-    fetch('http://localhost:3000/api/musicos', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome, email, estilo_musical: estilo, portfolio, telefone, instagram, youtube }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-
-document.getElementById('contratanteForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('contratanteNome').value;
-    const email = document.getElementById('contratanteEmail').value;
-    const telefone = document.getElementById('contratanteTelefone').value;
-
-    fetch('http://localhost:3000/api/contratantes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome, email, telefone }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-
-    fetch('http://localhost:3000/api/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        if (data === 'Login bem-sucedido.') {
-            window.location.href = 'admin.html';
-        } else {
-            alert(data);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function() {
+    const musicoForm = document.getElementById('musicoForm');
+
+    musicoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch('http://localhost:3000/api/artista', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Erro ao cadastrar músico.');
+        });
+    });
+
     if (document.getElementById('musicosList')) {
-        fetch('http://localhost:3000/api/musicos')
+        fetch('http://localhost:3000/api/artista')
             .then(response => response.json())
             .then(data => {
                 const musicosList = document.getElementById('musicosList');
@@ -94,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('filterEstilo').addEventListener('input', function() {
             const estilo = this.value;
             if (estilo === '') {
-                fetch('http://localhost:3000/api/musicos')
+                fetch('http://localhost:3000/api/artista')
                     .then(response => response.json())
                     .then(data => {
                         const musicosList = document.getElementById('musicosList');
@@ -113,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error('Error:', error);
                     });
             } else {
-                fetch(`http://localhost:3000/api/musicos/estilo/${estilo}`)
+                fetch(`http://localhost:3000/api/artista/estilo/${estilo}`)
                     .then(response => response.json())
                     .then(data => {
                         const musicosList = document.getElementById('musicosList');
@@ -139,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        fetch(`http://localhost:3000/api/musicos/${id}`)
+        fetch(`http://localhost:3000/api/artista/${id}`)
             .then(response => response.json())
             .then(musico => {
                 document.getElementById('musicoFoto').src = `img/${musico.foto}`; // Certifique-se de que as fotos estejam na pasta img
@@ -157,35 +105,3 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 });
-
-document.getElementById('musicoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-
-    fetch('http://localhost:3000/api/musicos', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-
-//Plugin carrosel de fotos do portfolio
-var swiper = new Swiper(".swiper", {
-    cssMode: true,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    keyboard: true,
-  });
-  
