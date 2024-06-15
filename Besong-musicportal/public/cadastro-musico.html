@@ -1,32 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <script src="/Besong-musicportal/public/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Músico</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Cadastro de Artista</title>
 </head>
 <body>
-    <header>
-        <h1>BeSong</h1>
-    </header>
-    <main>
-        <div class="container">
-            <h2>Cadastro de Músico</h2>
-            <form id="musicoForm" enctype="multipart/form-data">
-                <input type="text" id="musicoNome" name="nome" placeholder="Nome" required>
-                <input type="email" id="musicoEmail" name="email" placeholder="Email" required>
-                <input type="text" id="musicoEstilo" name="estilo_musical" placeholder="Estilo Musical" required>
-                <input type="text" id="musicoTelefone" name="telefone" placeholder="Telefone" required>
-                <input type="text" id="musicoInstagram" name="instagram" placeholder="Link do Instagram" required>
-                <input type="text" id="musicoYoutube" name="youtube" placeholder="Link do YouTube" required>
-                <textarea id="musicoPortfolio" name="portfolio" placeholder="Portfólio" required></textarea>
-                <input type="file" id="musicoFoto" name="foto" accept="image/*" required>
-                <button type="submit">Cadastrar Músico</button>
-            </form>
-            <a href="index.html">Voltar</a>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/undraw_compose_music_re_wpiw (5).svg">
         </div>
-    </main>
-    <script src="script.js"></script>
+        <div class="cadastroMusicoForm">
+            <form id="musicoForm" enctype="multipart/form-data">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Músico</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="musicoNome">Nome</label>
+                        <input id="musicoNome" type="text" name="nome" placeholder="Nome da banda ou artista" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="usuario">Usuário</label>
+                        <input id="usuario" type="text" name="Usuário" placeholder="Usuário" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="musicoTelefone">Telefone</label>
+                        <input id="musicoTelefone" type="text" name="name" placeholder="Digite seu Número: +55(61)99988-8899" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="musicoEmail">E-mail</label>
+                        <input id="musicoEmail" type="email" name="email" placeholder="E-mail para contato" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="musicoGenero">Gênero Musical</label>
+                        <select id="musicoGenero" name="genero" required>
+                            <option value="">Selecione um gênero</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Clássica">Clássica</option>
+                            <option value="Hip Hop">Hip Hop</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="Country">Country</option>
+                            <option value="Blues">Blues</option>
+                            <option value="Eletrônica">Eletrônica</option>
+                            <option value="Samba">Samba</option>
+                            <option value="Forró">Forró</option>
+                            <option value="Sertanejo">Sertanejo</option>
+                            <option value="Bossa Nova">Bossa Nova</option>
+                            <option value="MPB">MPB</option>
+                        </select>
+                    </div>
+                    <form id="musicoForm">
+                        <div class="input-box">
+                            <label for="musicoRegiao">Região</label>
+                            <input id="musicoRegiao" type="text" name="regiao" placeholder="Região da sua banda" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="ytLink">YouTube link</label>
+                            <input id="ytLink" type="text" name="ytLink" placeholder="Link do seu canal" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="spotifyLink">Spotify link</label>
+                            <input id="spotifyLink" type="text" name="spotifyLink" placeholder="Link do seu Spotify" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="wppLink">WhatsApp link</label>
+                            <input id="wppLink" type="text" name="wppLink" placeholder="Link do seu WhatsApp" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="instaLink">Instagram link</label>
+                            <input id="instaLink" type="text" name="instaLink" placeholder="Link do seu Instagram" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="senha">Senha</label>
+                            <input id="senha" type="password" name="senha" placeholder="Senha" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="confirmeSenha">Confirme sua senha</label>
+                            <input id="confirmeSenha" type="password" name="confirmeSenha" placeholder="Confirme sua senha" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" id="descricao" cols="85" rows="5" placeholder="Faça uma breve descrição sobre sua banda ou sobre você" required></textarea>
+                        </div> 
+                        <div class="gender-inputs">
+                            <label for="isBanda">Você é uma banda?</label>
+                            <select id="isBanda" name="musicoouBanda">
+                                <option value="true">Sim</option>
+                                <option value="false">Não</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <button type="submit">Cadastrar Músico</button>
+                        </div>
+                    </form>
+                    
+                    
+        </div>
+    </div>
 </body>
 </html>

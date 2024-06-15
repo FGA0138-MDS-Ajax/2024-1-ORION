@@ -1,26 +1,52 @@
-document.getElementById('musicoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('musicoNome').value;
-    const email = document.getElementById('musicoEmail').value;
-    const estilo = document.getElementById('musicoEstilo').value;
-    const telefone = document.getElementById('musicoTelefone').value;
-    const instagram = document.getElementById('musicoInstagram').value;
-    const youtube = document.getElementById('musicoYoutube').value;
-    const portfolio = document.getElementById('musicoPortfolio').value;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('musicoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    fetch('http://localhost:3000/api/musicos', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome, email, estilo_musical: estilo, portfolio, telefone, instagram, youtube }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
+        const nome = document.getElementById('musicoNome').value;
+        const usuario = document.getElementById('usuario').value;
+        const telefone = document.getElementById('musicoTelefone').value;
+        const email = document.getElementById('musicoEmail').value;
+        const generoMusical = document.getElementById('musicoGenero').value;
+        const regiao = document.getElementById('musicoRegiao').value;
+        const ytLink = document.getElementById('ytLink').value;
+        const spotifyLink = document.getElementById('spotifyLink').value;
+        const instagramLink = document.getElementById('instaLink').value;
+        const wppLink = document.getElementById('wppLink').value;
+        const senha = document.getElementById('senha').value;
+        const senhaConfirmada = document.getElementById('confirmeSenha').value;
+        const descricao = document.getElementById('descricao').value;
+        const isBanda = document.getElementById('isBanda').value;
+
+        fetch('http://54.242.81.142:80/api/musicos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                nome, 
+                usuario, 
+                telefone, 
+                email, 
+                generoMusical, 
+                regiao, 
+                ytLink, 
+                spotifyLink, 
+                instagramLink, 
+                wppLink, 
+                senha, 
+                senhaConfirmada, 
+                descricao, 
+                isBanda 
+            }),
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); // Display response message or handle success
+            document.getElementById('musicoForm').reset(); // Reset the form fields
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
 });
 
@@ -72,7 +98,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('musicosList')) {
-        fetch('http://localhost:3000/api/musicos')
+        fetch('http://localhost:80/api/musicosList')
             .then(response => response.json())
             .then(data => {
                 const musicosList = document.getElementById('musicosList');
@@ -94,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('filterEstilo').addEventListener('input', function() {
             const estilo = this.value;
             if (estilo === '') {
-                fetch('http://localhost:3000/api/musicos')
+                fetch('http://localhost:3000/api/musicosList')
                     .then(response => response.json())
                     .then(data => {
                         const musicosList = document.getElementById('musicosList');
@@ -139,41 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        fetch(`http://localhost:3000/api/musicos/${id}`)
-            .then(response => response.json())
-            .then(musico => {
-                document.getElementById('musicoFoto').src = `img/${musico.foto}`; // Certifique-se de que as fotos estejam na pasta img
-                document.getElementById('musicoNome').innerText = musico.nome;
-                document.getElementById('musicoEmail').innerText = musico.email;
-                document.getElementById('musicoTelefone').innerText = musico.telefone;
-                document.getElementById('musicoEstilo').innerText = musico.estilo_musical;
-                document.getElementById('musicoInstagram').href = musico.instagram;
-                document.getElementById('musicoInstagram').innerText = 'Instagram';
-                document.getElementById('musicoYoutube').innerHTML = `<iframe width="560" height="315" src="${musico.youtube}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-                document.getElementById('musicoPortfolio').innerText = musico.portfolio;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
     }
 });
 
-document.getElementById('musicoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
 
-    fetch('http://localhost:3000/api/musicos', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
 
 //Plugin carrosel de fotos do portfolio
 var swiper = new Swiper(".swiper", {
