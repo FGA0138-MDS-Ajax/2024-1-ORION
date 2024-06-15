@@ -53,6 +53,7 @@ app.post('/api/musicos', (req, res) => {
     userData.telefone,
     userData.descricao
   ];
+  
 
   // Executar a query usando pool.query do mysql2
   pool.query(sql, values, (err, result) => {

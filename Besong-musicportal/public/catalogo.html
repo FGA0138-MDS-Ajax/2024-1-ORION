@@ -13,10 +13,30 @@
     <main>
         <div class="container">
             <h2>Músicos Cadastrados</h2>
-            <input type="text" id="filterEstilo" placeholder="Filtrar por Estilo Musical">
+            <div class="input-box">
+                <label for="musicoGenero">Gênero Musical</label>
+                <select id="musicoGenero" name="genero" required>
+                    <option value="">Selecione um gênero</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Clássica">Clássica</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Country">Country</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Eletrônica">Eletrônica</option>
+                    <option value="Samba">Samba</option>
+                    <option value="Forró">Forró</option>
+                    <option value="Sertanejo">Sertanejo</option>
+                    <option value="Bossa Nova">Bossa Nova</option>
+                    <option value="MPB">MPB</option>
+                </select>
+                <button id="submitBtn">Submit</button>
+            </div>
             <div id="musicosList"></div>
         </div>
     </main>
-    <script src="script.js"></script>
+    <script src="/Besong-musicportal/public/scripts/scriptConsulta.js"></script>
 </body>
 </html>
