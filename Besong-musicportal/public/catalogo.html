@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>BeSong</h1>
+        <h1>Catálogo de Músicos</h1>
+        <label for="genre-filter">Filtrar por gênero:</label>
+        <select id="genre-filter">
+            <option value="todos">Todos</option>
+            <option value="rock">Rock</option>
+            <option value="pagode">Pagode</option>
+            <option value="sertanejo">Sertanejo</option>
+            <option value="MPB">MPB</option>
+        </select>
+        <label for="name-search">Buscar por nome:</label>
+        <input type="text" id="name-search" placeholder="Digite o nome do artista">
     </header>
     <main>
-        <div class="container">
-            <h2>Músicos Cadastrados</h2>
-            <div class="input-box">
-                <label for="musicoGenero">Gênero Musical</label>
-                <select id="musicoGenero" name="genero" required>
-                    <option value="">Selecione um gênero musical</option>
-                    <option value="Rock">Rock</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Classical">Clássica</option>
-                    <option value="Hip Hop">Hip Hop</option>
-                    <option value="Reggae">Reggae</option>
-                    <option value="Country">Country</option>
-                    <option value="Blues">Blues</option>
-                    <option value="Electronic">Eletrônica</option>
-                    <option value="Samba">Samba</option>
-                    <option value="Forro">Forró</option>
-                    <option value="Sertanejo">Sertanejo</option>
-                    <option value="Bossa Nova">Bossa Nova</option>
-                    <option value="MPB">MPB</option>
-                </select>
-                <button id="submitBtn">Submit</button>
-            </div>
-            <div id="musicosList"></div>
-        </div>
+        <ul id="musician-list">
+            <!-- Músicos serão inseridos aqui pelo Node -->
+        </ul>
     </main>
-    <script src="scripts/scriptConsulta.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
