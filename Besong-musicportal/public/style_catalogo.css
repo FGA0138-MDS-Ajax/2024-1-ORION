@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #bb5100;
+    background-color: #FF4500;
     color: #f4f4f4;
     padding: 20px;
     text-align: center;
@@ -31,7 +31,7 @@ main {
 }
 
 li {
-    background-color: rgb(88, 4, 144);
+    background-color: #6A0DAD;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -66,4 +66,11 @@ li a {
 
 li a:hover {
     background-color: rgba(255, 255, 255, 0);
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
 }
