@@ -1,56 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo</title>
-    <link rel="stylesheet" href="style_catalogo.css">
+    <link rel="stylesheet" href="style_catalogo2.css">
 </head>
 
 <body>
     <header>
-        <h1>Catálogo de Músicos</h1>
-        <label for="genre-filter">Filtrar por gênero:</label>
-        <select id="musicoGenero">
-            <option value="todos">Todos</option>
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="jazz">Jazz</option>
-            <option value="classica">Clássica</option>
-            <option value="hip-hop">Hip-hop</option>
-            <option value="reggae">Reggaer</option>
-            <option value="blues">Blues</option>
-            <option value="eletronica">Eletrônica</option>
-            <option value="samba">Samba</option>
-            <option value="forro">Forró</option>
-            <option value="pagode">Pagode</option>
-            <option value="sertanejo">Sertanejo</option>
-            <option value="MPB">MPB</option>
-        </select>
-        <label for="name-search">Buscar por nome:</label>
-        <input type="text" id="name-search" placeholder="Digite o nome do artista">
-        <button id="back-button">Voltar</button>
+        <h1>BeSong</h1>
     </header>
     <main>
-        <ul id="musician-list">
-            <!-- Músicos serão inseridos aqui pelo Node -->
-        </ul>
+        <div class="container">
+            <h2>Músicos Cadastrados</h2>
+            <div class="input-box">
+                <label for="musicoGenero">Gênero Musical</label>
+                <select id="musicoGenero" name="genero" required>
+                    <option value="">Selecione um gênero musical</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Classical">Clássica</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Country">Country</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Electronic">Eletrônica</option>
+                    <option value="Samba">Samba</option>
+                    <option value="Forro">Forró</option>
+                    <option value="Sertanejo">Sertanejo</option>
+                    <option value="Bossa Nova">Bossa Nova</option>
+                    <option value="MPB">MPB</option>
+                </select>
+                <button id="submitBtn">Buscar</button>
+                <button id="back-button">Voltar</button>
+            </div>
+            <div id="musicosList"></div>
+        </div>
     </main>
+    <script src="scripts/scriptConsulta.js"></script>
     <script>
-        const musicianList = document.getElementById('musician-list');
-        musicianList.addEventListener('click', function (event) {
-            if (event.target.tagName === 'LI') {
-                window.location.href = 'portfolio.html';
-            }
-        });
-
         const backButton = document.getElementById('back-button');
         backButton.addEventListener('click', function () {
             window.location.href = 'index.html'; // Redireciona para a página a Home do site
         });
     </script>
-    <script src="scripts/scriptConsulta.js"></script>
 </body>
 
 </html>

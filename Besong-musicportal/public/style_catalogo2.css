@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF4500;
+    color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box label {
+    margin-bottom: 10px;
+}
+
+.input-box select {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.input-box button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #FF4500;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background-color: #6A0DAD;
+}
+
+#musicosList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #6A0DAD;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;  /* Largura fixa para garantir retângulos */
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li h2 {
+    margin-top: 0;
+}
+
+li p {
+    margin: 5px 0;
+}
+
+li img {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    background-color: #6A0DAD;
+    color: #f4f4f4;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    background-color: #e63946;
+}
