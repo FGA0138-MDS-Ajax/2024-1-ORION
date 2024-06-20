@@ -43,9 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             alert(data); // Display response message or handle success
             document.getElementById('musicoForm').reset(); // Reset the form fields
+            window.location.href = './login.html';
         })
         .catch(error => {
             console.error('Error:', error);
         });
+        
     });
 });

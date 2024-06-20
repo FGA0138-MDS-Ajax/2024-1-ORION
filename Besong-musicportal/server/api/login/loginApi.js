@@ -21,54 +21,42 @@ const pool = mysql.createPool({
 // Middleware para parse de JSON
 app.use(express.json());
 
-// Rota para receber dados do formulário e inserir no banco de dados
-app.post('/api/musicos', (req, res) => {
+// Rota para receber dados do formulário e consultar no banco de dados
+app.post('/api/musicosList', (req, res) => {
   const userData = req.body;
+  const generoMusical = req.body.estiloMusical;
 
   // Log dos valores recebidos
   console.log('Dados recebidos do formulário:');
   console.log(userData);
 
-  // Converte isBanda para booleano
-  const eBanda = userData.isBanda === 'true';
 
-  // Montar query SQL para inserção
-  const sql = `
-    INSERT INTO ARTISTA
-    (nomeArtistico, eBanda, generoMusical, regiao, ytLink, wppLink, instaLink, spotfyLink, email, usuario, senha, telefone, descricao)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `;
-  const values = [
-    userData.nome,
-    eBanda,
-    userData.generoMusical,
-    userData.regiao,
-    userData.ytLink,
-    userData.wppLink,
-    userData.instagramLink,
-    userData.spotifyLink,
-    userData.email,
-    userData.usuario,
-    userData.senha,
-    userData.telefone,
-    userData.descricao
-  ];
-  
+
+  // Montar query SQL para consulta
+  const sql = `SELECT nomeArtistico, generoMusical, eBanda, regiao FROM ARTISTA WHERE generoMusical = ?`;
+
+  // Valores para substituir os placeholders na query SQL
+  const values = [generoMusical];
 
   // Executar a query usando pool.query do mysql2
   pool.query(sql, values, (err, result) => {
     if (err) {
       console.error('Erro ao executar a query: ' + err.stack);
-      res.status(500).json({ error: 'Erro interno ao salvar no banco de dados' });
+      res.status(500).json({ error: 'Erro interno ao consultar o banco de dados' });
       return;
     }
-    console.log('Registro inserido com sucesso');
-    res.json({ message: `Parabéns, ${userData.nome}! Cadastro efetuado com sucesso.` });
+
+    // Log do resultado da consulta
+    console.log('Consulta executada com sucesso');
+    console.log(result); // Aqui logamos o resultado da consulta
+
+    // Retorna os dados encontrados no banco de dados
+    res.json(result);
   });
 });
 
-// Iniciar o servidor na porta 80
-const PORT = process.env.PORT || 80;
+// Iniciar o servidor na porta 81
+const PORT = process.env.PORT || 81;
 app.listen(PORT, () => {
   console.log(`Servidor está rodando na porta ${PORT}`);
 });
