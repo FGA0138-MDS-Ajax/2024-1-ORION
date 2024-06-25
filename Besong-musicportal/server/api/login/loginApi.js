@@ -1,8 +1,9 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-
+const bcrypt = require('bcrypt');
 const app = express();
+const jwt = require('jsonwebtoken');
 
 // Middleware para permitir CORS
 app.use(cors());
@@ -11,52 +12,59 @@ app.use(cors());
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: "54.242.81.142",    // Host do seu banco de dados MySQL
-  port: 3306,                // Porta do seu banco de dados MySQL
-  user: "root",              // Usuário do seu banco de dados MySQL
-  password: "1234",          // Senha do seu banco de dados MySQL
-  database: "beSongDB",      // Nome do banco de dados
+  port: 3306,               // Porta do seu banco de dados MySQL
+  user: "root",             // Usuário do seu banco de dados MySQL
+  password: "1234",         // Senha do seu banco de dados MySQL
+  database: "beSongDB",     // Nome do banco de dados
   multipleStatements: true
 });
 
 // Middleware para parse de JSON
 app.use(express.json());
 
-// Rota para receber dados do formulário e consultar no banco de dados
-app.post('/api/musicosList', (req, res) => {
-  const userData = req.body;
-  const generoMusical = req.body.estiloMusical;
+const SECRET_KEY = 'token';
 
-  // Log dos valores recebidos
-  console.log('Dados recebidos do formulário:');
-  console.log(userData);
+// Rota para login de usuários
+app.post('/api/login', async (req, res) => {
+  const { email, senha } = req.body;
 
+  try {
+    // Montar query SQL para buscar o usuário pelo email
+    const sql = 'SELECT * FROM ARTISTA WHERE email = ?';
+    pool.query(sql, [email], async (err, results) => {
+      if (err) {
+        console.error('Erro ao executar a query: ' + err.stack);
+        res.status(500).json({ error: 'Erro interno ao buscar no banco de dados' });
+        return;
+      }
 
+      if (results.length === 0) {
+        res.status(401).json({ error: 'Usuário não encontrado' });
+        return;
+      }
 
-  // Montar query SQL para consulta
-  const sql = `SELECT nomeArtistico, generoMusical, eBanda, regiao FROM ARTISTA WHERE generoMusical = ?`;
+      const user = results[0];
 
-  // Valores para substituir os placeholders na query SQL
-  const values = [generoMusical];
+      // Comparar a senha fornecida com a senha armazenada
+      const match = await bcrypt.compare(senha, user.senha);
+      if (!match) {
+        res.status(401).json({ error: 'Senha incorreta' });
+        return;
+      }
 
-  // Executar a query usando pool.query do mysql2
-  pool.query(sql, values, (err, result) => {
-    if (err) {
-      console.error('Erro ao executar a query: ' + err.stack);
-      res.status(500).json({ error: 'Erro interno ao consultar o banco de dados' });
-      return;
-    }
+      const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
 
-    // Log do resultado da consulta
-    console.log('Consulta executada com sucesso');
-    console.log(result); // Aqui logamos o resultado da consulta
-
-    // Retorna os dados encontrados no banco de dados
-    res.json(result);
-  });
+      // Login bem-sucedido
+      res.json({ message: 'Login efetuado com sucesso', token });
+    });
+  } catch (err) {
+    console.error('Erro ao verificar a senha: ' + err.stack);
+    res.status(500).json({ error: 'Erro interno ao processar a senha' });
+  }
 });
 
-// Iniciar o servidor na porta 81
-const PORT = process.env.PORT || 81;
+// Iniciar o servidor na porta 82
+const PORT = process.env.PORT || 82;
 app.listen(PORT, () => {
   console.log(`Servidor está rodando na porta ${PORT}`);
 });
