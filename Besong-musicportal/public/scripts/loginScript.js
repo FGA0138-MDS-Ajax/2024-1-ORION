@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('loginEmail').value;
         const senha = document.getElementById('loginPassword').value;
 
-        fetch('http://54.242.81.142:82/api/login', {
+        fetch('http://54.242.81.142:85/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

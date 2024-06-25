@@ -44,6 +44,7 @@ app.post('/api/login', async (req, res) => {
       }
 
       const user = results[0];
+      console.log(user);
 
       // Comparar a senha fornecida com a senha armazenada
       const match = await bcrypt.compare(senha, user.senha);
@@ -52,7 +53,7 @@ app.post('/api/login', async (req, res) => {
         return;
       }
 
-      const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+      const token = jwt.sign({ id: user.idArtista, nome: user.nomeArtistico, eBanda: user.eBanda, genero: user.generoMusical, regiao: user.regiao, ytLink: user.ytLink, wppLink: user.wppLink, insta: user.instaLink, spotfy: user.spotfyLink,email: user.email, user: user.usuario, telefone: user.telefone, descricao:user.descricao }, SECRET_KEY, { expiresIn: '1h' });
 
       // Login bem-sucedido
       res.json({ message: 'Login efetuado com sucesso', token });
@@ -63,8 +64,8 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Iniciar o servidor na porta 82
-const PORT = process.env.PORT || 82;
+// Iniciar o servidor na porta 85
+const PORT = process.env.PORT || 85;
 app.listen(PORT, () => {
   console.log(`Servidor está rodando na porta ${PORT}`);
 });
