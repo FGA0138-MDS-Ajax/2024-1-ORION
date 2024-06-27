@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #FF4500; 
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o header esteja acima do conteúdo da página */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    flex: 1; /* Faz a logo ocupar todo o espaço disponível à esquerda */
+}
+
+.logo h1 {
+    font-family: 'Lobster', cursive;
+    padding: 10px;
+    color: #FFF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #6A0DAD;
+    color: white;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 120px 20px 20px; 
+    background-color: #f3f3f3; 
+}
+
+.container {
+    text-align: center;
+    max-width: 600px; 
+    padding: 20px; 
+}
+
+.content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.content h2 {
+    color: black; 
+    margin-bottom: 15px; 
+    font-size: 2.0rem; 
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #FF4500; 
+    color: #fff;
+    border-radius: 5px;
+    width: 200px; /* Largura dos botões definida */
+}
+
+button:hover {
+    background-color: #6A0DAD;
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para telas menores (exemplo: tablets e smartphones) */
+    .container {
+        padding: 10px; /* Reduz o padding lateral para telas menores */
+    }
+
+    button {
+        width: 100%; /* Botões ocupam toda a largura disponível */
+    }
+}
