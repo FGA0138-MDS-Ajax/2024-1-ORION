@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeSong - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_index.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
@@ -13,7 +13,10 @@
             <h1>BeSong</h1>
         </div>
         <nav>
-            <ul>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+            <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
@@ -25,10 +28,8 @@
     <main>
         <section class="hero">
             <div class="hero-text">
-            
                 <p>BeSong</p>
                 <h2>Encontre o seu músico favorito</h2>
-                
             </div>
             <div class="hero-image">
                 <img src="img/tela-inicial.png" alt="Músicos">
@@ -45,5 +46,13 @@
             </div>
         </section>
     </main>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

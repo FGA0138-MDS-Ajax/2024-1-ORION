@@ -163,7 +163,7 @@ main {
     margin-top: 60px;
 }
 
-/*porfolio*/
+/*portfolio*/
 
 #c {
     padding: 300px;
@@ -176,7 +176,7 @@ main {
 
 
 button {
-    background-color: #f37021; /* Roxo */
+    background-color: #f37021; 
     color: #fff;
     cursor: pointer;
     border: 2px solid #000;
@@ -185,6 +185,22 @@ button {
     font-size: 2.0em;
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #FF4500; 
+    color: #fff;
+    border-radius: 5px;
+    width: 200px; /* Largura dos botões definida */
+    align-items: center;
+}
+
+.button button:hover {
+    background-color: #6A0DAD;
 }
 
 #btn1 {
