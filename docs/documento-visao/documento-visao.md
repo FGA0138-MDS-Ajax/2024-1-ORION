@@ -188,9 +188,9 @@ Apresentada a divisão de atribuições e responsabilidades entre os membros do 
 | Sprint 2 | Documento de Visão e Documento de Arquitetura. | 06/05/2024 | 10/05/2024 | Documento de visão e documento de arquitetura | Todos os integrantes do grupo | 10% |
 | Sprint 3 | Criar perfil de contratante e de músico | 13/05/2024  | 17/05/2024 | Design do projeto e criação de perfil de contratante e de músico | Todos os integrantes do grupo | 20% |
 | Sprint 4 | Editar informações do perfil | 20/05/2024 | 25/05/2024 | Disponibilizar opção de editar informações dos perfis | Todos os integrantes do grupo | 15% |
-| Sprint 5 | Criar visualização do catálogo de artistas | 03/07/2024 | 07/06/2024 | Disponibilizar visualização do catálogo do artista   | Todos os integrantes do grupo | 15% |
-| Sprint 6 | Disponibilizar filtro dos músicos | 10/07/2024 | 14/07/2024 | Entregar possibilidade de filtro dos músicos. | Todos os integrantes do grupo | 20% |
-| Sprint 7 | Contatar o músico | 17/07/2024 | 21/07/2024 | Disponibilizar funcionalidade de contato             | Todos os integrantes do grupo | 20% |
+| Sprint 5 | Criar visualização do catálogo de artistas | 03/06/2024 | 07/06/2024 | Disponibilizar visualização do catálogo do artista   | Todos os integrantes do grupo | 15% |
+| Sprint 6 | Disponibilizar filtro dos músicos | 10/06/2024 | 14/06/2024 | Entregar possibilidade de filtro dos músicos. | Todos os integrantes do grupo | 20% |
+| Sprint 7 | Contatar o músico | 17/06/2024 | 21/06/2024 | Disponibilizar funcionalidade de contato             | Todos os integrantes do grupo | 20% |
 
 <div align="center">
     <p><b>Fonte:</b>Autoria própria</p>
@@ -402,3 +402,4 @@ Manifesto para Desenvolvimento Ágil de Software. [S.l.: s.n.], 2001. Disponíve
 | Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 01/05/2024 | Escrita do documento de visão | Brenno, Davi, Felipe, Fernanda, Henrique, Paola, Victor, Yuri |
+| 1.1 | 02/06/2024 | Corrigindo datas da tabela 03 | Brenno da Silva|
