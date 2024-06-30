@@ -40,7 +40,7 @@ Permitir que músicos e contratantes se registrem na plataforma, criando perfis 
 Perfil com informações sobre gêneros musicais, portfólio, links redirecionando para redes sociais e meios de contato. 
 
 <div align="center">
-    <p><b>Figura 03:</b>Página Portifólio do Artista</p>
+    <p><b>Figura 03:</b>Página Portfólio do Artista</p>
 </div>
 ![imagem 01](../imagens/Portifolio.PNG)
 <div align="center">
