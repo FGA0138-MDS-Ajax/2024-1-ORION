@@ -13,7 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 // Aqui você atualiza o DOM com os dados recebidos
+                console.log("Response: ",data);
+
+                document.getElementById('nome').textContent = data.nomeArtistico;
+                document.getElementById('tipo').textContent = data.eBanda ? 'Banda, ' + data.generoMusical : 'Solo, ' + data.generoMusical;
+                document.getElementById('release').textContent = data.descricao;
+                document.getElementById('email').textContent = data.email;
+                document.getElementById('telefone').textContent = data.telefone;
                 
+                document.querySelector('.video-div iframe').src = data.ytLink;
+                document.querySelector('#btn1 a').href = data.ytLink;
+                document.querySelector('#btn2 a').href = data.instagramLink;
+                document.querySelector('#btn3 a').href = data.wppLink;
+    
 
                 // Atualizar outras informações conforme necessário
             })
