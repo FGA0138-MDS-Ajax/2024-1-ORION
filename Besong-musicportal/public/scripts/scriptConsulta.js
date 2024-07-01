@@ -21,10 +21,39 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                // Handle response data as needed
+                // Handle response data
                 console.log('Response:', data);
                 // Example: update UI with response data
-                document.getElementById('musicosList').innerText = JSON.stringify(data, null, 2);
+                const musicosList = document.getElementById('musicosList');
+                musicosList.innerHTML = ''; // Clear previous content
+
+                data.forEach(musico => {
+                    // Create table for each musician
+                    const table = document.createElement('table');
+                    table.className = 'musician-table';
+
+                    // Add musician data to the table
+                    const row = table.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+
+                    cell1.innerHTML = `<img src="${musico.image}" alt="${musico.nomeArtistico}" style="width:100px;height:auto;">`;
+                    cell2.innerHTML = `<strong>${musico.nome}</strong><br>${musico.descricao}`;
+                    cell3.innerHTML = `<a href="portfolio.html" class="portfolio-link" data-id="${musico.idArtista}">Portfólio</a>`;
+
+                    // Append the table to the musicians list
+                    musicosList.appendChild(table);
+                });
+
+                document.querySelectorAll('.portfolio-link').forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        const idArtista = this.getAttribute('data-id');
+                        sessionStorage.setItem('idArtista', idArtista);
+                        window.location.href = this.href;
+                    });
+                });
             })
             .catch(error => {
                 console.error('Error:', error);

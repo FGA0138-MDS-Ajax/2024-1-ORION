@@ -30,10 +30,11 @@ app.post('/api/musicosList', (req, res) => {
   console.log('Dados recebidos do formulário:');
   console.log(userData);
 
-
+  // Converte isBanda para booleano
+  const eBanda = userData.isBanda === 'true';
 
   // Montar query SQL para consulta
-  const sql = `SELECT nomeArtistico, generoMusical, eBanda, regiao FROM ARTISTA WHERE generoMusical = ?`;
+  const sql = `SELECT idArtista, nomeArtistico, generoMusical, eBanda, regiao, descricao FROM ARTISTA WHERE generoMusical = ?`;
 
   // Valores para substituir os placeholders na query SQL
   const values = [generoMusical];
