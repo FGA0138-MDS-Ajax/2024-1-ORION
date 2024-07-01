@@ -5,6 +5,17 @@ body {
     padding: 0;
 }
 
+header {
+    background-color: #FF4500;
+    color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
 main {
     padding: 20px;
 }
@@ -42,56 +53,49 @@ main {
 }
 
 .input-box button:hover {
-    background-color: #6A0DAD;
+    background-color: #e63946;
 }
 
 #musicosList {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
 }
 
-/*li {
+.musician-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.musician-table th,
+.musician-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.musician-table th {
     background-color: #6A0DAD;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 300px;  /* Largura fixa para garantir retângulos 
-    color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: white;
 }
 
-li h2 {
-    margin-top: 0;
-}
-
-li p {
-    margin: 5px 0;
-}
-
-li img {
-    display: block;
-    margin: 0 auto 10px auto;
-    width: 100%;
-    max-width: 300px;
+.musician-table img {
+    max-width: 100px;
     height: auto;
 }
 
-li a {
+.musician-table a {
+    color: #FF4500;
     text-decoration: none;
-    color: inherit;
-    display: block;
 }
 
-li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.musician-table a:hover {
+    text-decoration: underline;
 }
 
 #back-button {
@@ -99,7 +103,7 @@ li a:hover {
     top: 20px;
     left: 20px;
     z-index: 1;
-    background-color: #6A0DAD;
+    background-color: #872400;
     color: #f4f4f4;
     padding: 10px;
     border: none;
@@ -109,4 +113,4 @@ li a:hover {
 
 #back-button:hover {
     background-color: #e63946;
-}*/
+}
