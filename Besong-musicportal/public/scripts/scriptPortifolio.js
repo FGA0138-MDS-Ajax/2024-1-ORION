@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('release').textContent = data.descricao;
                 document.getElementById('email').textContent = data.email;
                 document.getElementById('telefone').textContent = data.telefone;
+                document.getElementById('btn1').textContent = data.ytLink;
                 
-                document.querySelector('.video-div iframe').src = data.ytLink;
-                document.querySelector('#btn1 a').href = data.ytLink;
-                document.querySelector('#btn2 a').href = data.instagramLink;
-                document.querySelector('#btn3 a').href = data.wppLink;
+                document.querySelector('.video-div iframe').src = data.ytLink;           
+                document.getElementById('btn1').getElementsByTagName('a')[0].href = data.ytLink;            
+                document.getElementById('btn2').getElementsByTagName('a')[0].href = data.instagramLink;           
+                document.getElementById('btn3').getElementsByTagName('a')[0].href = data.wppLink;
+
     
 
                 // Atualizar outras informações conforme necessário

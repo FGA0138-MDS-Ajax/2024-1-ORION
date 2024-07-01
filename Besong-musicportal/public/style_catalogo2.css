@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -10,10 +10,28 @@ header {
     color: #f4f4f4;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
     margin: 0;
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #872400;
+    color: #f4f4f4;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#back-button:hover {
+    background-color: #e63946;
 }
 
 main {
@@ -57,60 +75,37 @@ main {
 }
 
 #musicosList {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
     margin-top: 20px;
 }
 
-.musician-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.musician-table th,
-.musician-table td {
+.musician-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
 }
 
-.musician-table th {
-    background-color: #6A0DAD;
-    color: white;
-}
-
-.musician-table img {
-    max-width: 100px;
+.musician-image {
+    max-width: 250px;
     height: auto;
+    margin-bottom: 10px;
 }
 
-.musician-table a {
-    color: #FF4500;
+.portfolio-link {
+    color: #6A0DAD;
     text-decoration: none;
+    margin-top: 10px;
 }
 
-.musician-table a:hover {
+.portfolio-link:hover {
     text-decoration: underline;
-}
-
-#back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-    background-color: #872400;
-    color: #f4f4f4;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#back-button:hover {
-    background-color: #e63946;
 }

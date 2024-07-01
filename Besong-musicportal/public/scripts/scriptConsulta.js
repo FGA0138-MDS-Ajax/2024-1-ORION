@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 // Handle response data
                 console.log('Response:', data);
-                // Example: update UI with response data
+                
                 const musicosList = document.getElementById('musicosList');
                 musicosList.innerHTML = ''; // Clear previous content
 
@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const cell2 = row.insertCell(1);
                     const cell3 = row.insertCell(2);
 
-                    cell1.innerHTML = `<img src="${musico.image}" alt="${musico.nomeArtistico}" style="width:100px;height:auto;">`;
-                    cell2.innerHTML = `<strong>${musico.nome}</strong><br>${musico.descricao}`;
+
+                    cell1.innerHTML = `<img src="img/perfil.jpeg" alt="${musico.nomeArtistico}" style="width:100px;height:auto;">`;
+                    cell2.innerHTML = `<strong>${musico.nomeArtistico}</strong><br>`;
                     cell3.innerHTML = `<a href="portfolio.html" class="portfolio-link" data-id="${musico.idArtista}">Portfólio</a>`;
 
                     // Append the table to the musicians list
