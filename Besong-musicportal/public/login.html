@@ -24,8 +24,14 @@
         <div class="container">
             <h2>Login</h2>
             <form id="loginForm">
+                <select id="musicoContratante" name="genero" required>
+                    <option value="">Você é um Músico ou um Contratante</option>
+                    <option value="musico">Músico</option>
+                    <option value="contratante">Contratante</option>
+                </select>
                 <input type="email" id="loginEmail" placeholder="Email" required>
                 <input type="password" id="loginPassword" placeholder="Senha" required>
+                
                 <button class="button" type="submit">Entrar</button>
             </form>
             <a href="index.html">Voltar</a>
