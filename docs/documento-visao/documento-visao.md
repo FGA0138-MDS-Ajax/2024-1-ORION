@@ -187,10 +187,10 @@ Apresentada a divisão de atribuições e responsabilidades entre os membros do 
 | Sprint 1 | Definição do Produto | 29/04/2024 | 03/05/2024 | (*) | Todos os integrantes do grupo | Intervalos mínimos de 10 em 10 % |
 | Sprint 2 | Documento de Visão e Documento de Arquitetura. | 06/05/2024 | 10/05/2024 | Documento de visão e documento de arquitetura | Todos os integrantes do grupo | 10% |
 | Sprint 3 | Criar perfil de contratante e de músico | 13/05/2024  | 17/05/2024 | Design do projeto e criação de perfil de contratante e de músico | Todos os integrantes do grupo | 20% |
-| Sprint 4 | Editar informações do perfil | 20/05/2024 | 25/05/2024 | Disponibilizar opção de editar informações dos perfis | Todos os integrantes do grupo | 15% |
-| Sprint 5 | Criar visualização do catálogo de artistas | 03/06/2024 | 07/06/2024 | Disponibilizar visualização do catálogo do artista   | Todos os integrantes do grupo | 15% |
-| Sprint 6 | Disponibilizar filtro dos músicos | 10/06/2024 | 14/06/2024 | Entregar possibilidade de filtro dos músicos. | Todos os integrantes do grupo | 20% |
-| Sprint 7 | Contatar o músico | 17/06/2024 | 21/06/2024 | Disponibilizar funcionalidade de contato             | Todos os integrantes do grupo | 20% |
+| Sprint 4 | Criar visualização do catálogo de artistas | 20/05/2024 | 25/05/2024 | Disponibilizar visualização do catálogo do artista   | Todos os integrantes do grupo | 15% |
+| Sprint 5 | Disponibilizar filtro dos músicos | 03/06/2024 | 07/06/2024 | Entregar possibilidade de filtro dos músicos. | Todos os integrantes do grupo | 20% |
+| Sprint 6 | Contatar o músico | 10/06/2024 | 14/06/2024 | Disponibilizar funcionalidade de contato             | Todos os integrantes do grupo | 20% |
+| Sprint 7 | Login de usuário | 17/06/2024 | 21/06/2024 | Disponibilizar funcionalidade de login de usuário | Integrantes do Back-end | 15% |
 
 <div align="center">
     <p><b>Fonte:</b>Autoria própria</p>
@@ -327,7 +327,7 @@ A **Figura 3** apresenta o diagrama ilustrativo do fluxo de trabalho a ser segui
 
 O backlog de requisitos deste projeto foi cuidadosamente desenvolvido com base na compreensão das necessidades dos nossos clientes - um músico em busca de oportunidades para mostrar seu talento e um contratante procurando talentos para eventos e projetos. Ao entender profundamente as perspectivas e objetivos desses dois grupos de usuários, pudemos definir requisitos que atendem às suas expectativas e facilitam suas interações com a plataforma. 
 
-A partir dessas necessidades identificadas, foram elicitados requisitos a partir de entrevista com representantes dos dois grupos e um brainstorm da equipe. Dessa forma, as definições devem abranger a criação e edição de perfis, a visualização do catálogo de serviços e a implementação de uma barra de pesquisa com filtro. Esses requisitos são fundamentais para garantir uma experiência fluida e eficiente para os usuários, permitindo que eles encontrem facilmente o que estão procurando e alcancem seus objetivos de maneira eficaz. 
+A partir dessas necessidades identificadas, foram elicitados requisitos a partir de entrevista com representantes dos dois grupos e um brainstorm da equipe. Dessa forma, as definições devem abranger a criação de perfis, a visualização do catálogo de serviços e a implementação de uma barra de pesquisa com filtro. Esses requisitos são fundamentais para garantir uma experiência fluida e eficiente para os usuários, permitindo que eles encontrem facilmente o que estão procurando e alcancem seus objetivos de maneira eficaz. 
 
 ### **4.2 Perfis**
 
@@ -337,7 +337,6 @@ A partir dessas necessidades identificadas, foram elicitados requisitos a partir
 
 | Nome do perfil  | Características do perfil | Permissões de acesso |
 |-----------------|---------------------------|----------------------|
-| Administrador   | Responsável pelo gerenciamento de usuários e categorias presentes no sistema. | - Acesso total ao sistema para gerenciar usuários e conteúdos; - Monitorar atividades e garantir a segurança e integridade dos dados. |
 | Músico| Músicos que buscam divulgar sua carreira artística a fim de serem contratados para shows.| - Se cadastrar e gerenciar seu próprio perfil; - Adicionar informações; - Mostrar o seu trabalho como músico; - Definir preferências de contato e de disponibilidade. |
 | Contratante | Donos de bares, restaurantes ou organizadores de eventos que buscam contratar músicos. | - Visualizar o catálogo de músicos disponíveis; - Pesquisar músicos de acordo com suas preferências; - Visualizar todas as informações do músico escolhido; - Entrar em contato com o músico escolhido. |
 
@@ -357,10 +356,10 @@ A partir dessas necessidades identificadas, foram elicitados requisitos a partir
 | 02                   | Modelagem                             | 2       |
 | 03                   | Cadastro de músico                    | 3       |
 | 03                   | Cadastro contratante                  | 3       |
-| 04                   | Editar informações do perfil          | 4       |
-| 05                   | Criar visualização do catálogo de artistas | 5  |
-| 06                   | Disponibilizar filtro dos músicos     | 6       |
-| 07                   | Contatar o músico                     | 7       |
+| 04                   | Criar visualização do catálogo de artistas | 4  |
+| 05                   | Disponibilizar filtro dos músicos     | 5       |
+| 06                   | Contatar o músico                     | 6       |
+| 07                   | Login de usuário                      | 7       |
 
 <div align="center">
     <p><b>Fonte:</b>Autoria própria</p>
@@ -378,12 +377,12 @@ A partir dessas necessidades identificadas, foram elicitados requisitos a partir
 | 2 | 2 | Modelar banco de dados | Requisito não funcional | Alta | Deve ser projetada a estrutura do banco de dados para armazenar informações sobre artistas, contratantes, perfis de usuário, catálogo de serviços, etc | Como usuário gostaria de visualizar o perfil salvo e criado pelos artistas |
 | 3 | 3 | Criar perfil de artista | Requisito funcional | Muito alta | Implementação de uma funcionalidade que permita aos artistas criar perfis pessoais, incluindo informações como biografia, portfólio, fotos e vídeos de trabalhos anteriores, categoria musical | Como um artista, quero poder criar um perfil pessoal no site, para que eu possa mostrar meu portfólio, compartilhar informações sobre minha experiência e habilidades, e me conectar com potenciais contratantes |
 | 3 | 3 | Criar perfil de contratante | Requisito funcional | Médio | Permitir que os contratantes pesquisem e visualizem perfis de artistas de acordo com suas necessidades específicas  | Como um contratante quero poder criar um perfil no site, para que eu possa procurar por artistas com base na proposta do meu evento |
-| 4 | 4 | Editar perfis de usuários | Requisito funcional | Alta | Implementar uma interface de usuário que permita aos usuários editar e atualizar suas informações | Como um usuário registrado, quero poder editar meu perfil a qualquer momento, para que eu possa manter minhas informações atualizadas, como mudança de endereço, novas fotos ou atualização de descrição |
-| 5 | 5 | Criar visualização do catálogo de artistas | Requisito funcional | Muito alta | Desenvolver uma funcionalidade que permita aos usuários visualizar e explorar um catálogo de artistas e serviços oferecidos, facilitando a descoberta e a seleção de recursos relevantes | Como um visitante do site, quero poder navegar pelo catálogo de artistas e serviços oferecidos, para que eu possa encontrar os artistas disponíveis para contratação com base em suas áreas de atuação, preços e avaliações |
-| 6 | 6 | Criar barra de pesquisa | Requisito funcional | Médio | Implementar uma barra de pesquisa que permita aos usuários realizar consultas textuais em todo o sistema, fornecendo resultados relevantes e filtráveis de forma rápida e eficiente | Como um usuário do site, quero poder usar uma barra de pesquisa para encontrar artistas e serviços específicos, digitando palavras-chave relacionadas, para que eu possa encontrar rapidamente o que estou procurando sem precisar navegar por todo o catálogo |
-| 6 | 6 | Criar filtro para pesquisa | Requisito funcional | Baixa | Adicionar opções de filtro à funcionalidade de pesquisa para permitir que os usuários refinem os resultados de acordo com suas preferências | Como um usuário do site, quero poder refinar os resultados da minha pesquisa usando filtros, como categoria de serviço, localização e gênero, para que eu possa encontrar artistas que atendam às minhas necessidades específicas com mais facilidade |
-| 6 | 6 | Categorizar | Requisito funcional | Alta | Classificar os músicos a partir de categorias de estilos musicais de tal forma que possibilite a pesquisa por categoria | Como contratante, quero poder pesquisar o músico a partir do meu estilo musical de preferência |
-| 7 | 7 | Contatar o músico | Requisito funcional | Alta | Adicionar forma de contato entre o contratante e o músico para estabelecer essa comunicação | Como contratante, quero poder entrar em contato com o músico a partir da plataforma, pois assim facilitará a minha comunicação com ele |
+| 4 | 4 | Criar visualização do catálogo de artistas | Requisito funcional | Muito alta | Desenvolver uma funcionalidade que permita aos usuários visualizar e explorar um catálogo de artistas e serviços oferecidos, facilitando a descoberta e a seleção de recursos relevantes | Como um visitante do site, quero poder navegar pelo catálogo de artistas e serviços oferecidos, para que eu possa encontrar os artistas disponíveis para contratação com base em suas áreas de atuação, preços e avaliações |
+| 5 | 5 | Criar barra de pesquisa | Requisito funcional | Médio | Implementar uma barra de pesquisa que permita aos usuários realizar consultas textuais em todo o sistema, fornecendo resultados relevantes e filtráveis de forma rápida e eficiente | Como um usuário do site, quero poder usar uma barra de pesquisa para encontrar artistas e serviços específicos, digitando palavras-chave relacionadas, para que eu possa encontrar rapidamente o que estou procurando sem precisar navegar por todo o catálogo |
+| 5 | 5 | Criar filtro para pesquisa | Requisito funcional | Baixa | Adicionar opções de filtro à funcionalidade de pesquisa para permitir que os usuários refinem os resultados de acordo com suas preferências | Como um usuário do site, quero poder refinar os resultados da minha pesquisa usando filtros, como categoria de serviço, localização e gênero, para que eu possa encontrar artistas que atendam às minhas necessidades específicas com mais facilidade |
+| 5 | 5 | Categorizar | Requisito funcional | Alta | Classificar os músicos a partir de categorias de estilos musicais de tal forma que possibilite a pesquisa por categoria | Como contratante, quero poder pesquisar o músico a partir do meu estilo musical de preferência |
+| 6 | 6 | Contatar o músico | Requisito funcional | Alta | Adicionar forma de contato entre o contratante e o músico para estabelecer essa comunicação | Como contratante, quero poder entrar em contato com o músico, pois assim facilitará a contratação |
+| 7 | 7 | Login de usuário | Requisito funcional | Alta | Adicionar opção de login para que os usuário que se registrarem possam acessar o site com seu perfil pessoal | Como um usuário resistrado, quero poder realizar o login no sistema para acessar e utilizar as funcionalidades disponíveis |
 
 <div align="center">
     <p><b>Fonte:</b>Autoria própria</p>
@@ -403,3 +402,5 @@ Manifesto para Desenvolvimento Ágil de Software. [S.l.: s.n.], 2001. Disponíve
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 01/05/2024 | Escrita do documento de visão | Brenno, Davi, Felipe, Fernanda, Henrique, Paola, Victor, Yuri |
 | 1.1 | 02/06/2024 | Corrigindo datas da tabela 03 | Brenno da Silva|
+| 1.2 | 01/07/2024 | Removendo do escopo a opção de editar perfil | Brenno da Silva |
+| 1.3 | 01/07/2024 | Adicionando ao escopo a opção de login de usuário | Brenno da Silva |
