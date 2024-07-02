@@ -240,9 +240,7 @@ O sistema deve ser intuitivo e fácil de usar, com uma interface acessível para
 
 O software deve ser compatível com múltiplas plataformas, como diferentes navegadores e sistemas operacionais. Essa portabilidade permite que os usuários acessem o sistema em diversos ambientes, aumentando a flexibilidade e o alcance; 
 
-O sistema deve ser de projetado de forma modular, facilitando correção de bugs e adição de novas funcionalidades, pois a manutenibilidade reduz os custos e o tempo de manutenção, permitindo uma evolução contínua em reposta às necessidades dos usuários; 
-
-O tempo de resposta para operações críticas não deve exceder 2 segundos. Um bom desempenho é vital para garantir que os usuários possam realizar suas atividades de maneira eficiente. 
+O sistema deve ser de projetado de forma modular, facilitando correção de bugs e adição de novas funcionalidades, pois a manutenibilidade reduz os custos e o tempo de manutenção, permitindo uma evolução contínua em reposta às necessidades dos usuários;  
 
 ## **3 Referências Bibliográficas**
 
@@ -258,3 +256,4 @@ GOÉS, Wilson M.; Aprenda UML Por Meio de Estudos de Casos. 1. ed. São Paulo: N
 | Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 19/05/2024 | Escrita do documento de arquitetura | Brenno, Fernanda, Henrique, Victor, Paola, Davi, yuri |
+| 1.1 | 02/07/2024 | Reformulação das restrições adicionais | Brenno da Silva |
