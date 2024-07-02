@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FF4500;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: 'Lobster', cursive;
+    padding: 10px;
+    color: #FFF;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #6A0DAD;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    color: #6A0DAD;
+    margin-top: 60px; /* para compensar o header fixo */
+}
+
+.hero-text {
+    max-width: 100%;
+}
+
+.hero-text h2 {
+    font-size: 2em;
+    padding-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    color: #FF4500;
+}
+
+#c {
+    padding: 300px;
+    border-radius: 8px;
+    width: 1000px;
+    margin-left: -120px;
+    text-align: center;
+
+}
+
+
+button {
+    background-color: #f37021; 
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #000;
+    box-shadow: 0 0 15px #732d91;
+    padding: 15px 15px;
+    font-size: 2.0em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #FF4500; 
+    color: #fff;
+    border-radius: 5px;
+    width: 200px; /* Largura dos botões definida */
+    align-items: center;
+}
+
+.button button:hover {
+    background-color: #6A0DAD;
+}
+
+#btn1 {
+    margin-right: 50px;
+    margin-left: 270px;
+}
+
+#btn2{
+    margin-right: 50px;
+}
+
+#header-c {
+
+        background-color: #FF4500; 
+        color: #fff;
+        padding: 50px 0px;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+}
+
+
+
+.text-div {
+    color: #f37021;
+    font-family: Impact;
+    font-weight: Regular;
+    font-size: 30px;
+
+  }
+
+#sobre {
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
+#email {
+    margin-bottom: 1px;
+    margin-top: 10px;
+    color: #000;
+}
+
+#release {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+#release-container {
+    margin-top: -300px;
+    background: #732d91;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    height: 300px;
+    margin-left: -110px;
+    text-align: center;
+
+}
+
+  .image-container{
+    background: #732d91;
+    padding: 10px;   
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    height: auto;
+    margin-left: -300px;
+    margin-top: -515px;
+}
+#contato {
+    background-color: #f37021;
+    text-align: center;
+    margin-left: -110px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    width: 700px;
+    height: 110px;
+}
+
+.video-div {
+    background: #732d91;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 850px;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    
+
+}
+
+.text-container {
+    background-color: #732d91;
+    border-radius: 8px;
+    width: 850px;
+    margin-bottom: 10px;
+    text-align: center;
+    
+
+}
+
+#nome {
+
+    color: #fff;
+    margin-bottom: 1px;
+    margin-top: 100px;
+    margin-left: 5px;
+    text-shadow:  -1px -1px 0 #3b3434,  
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000; /* Cor do contorno */
+
+}
+#tipo{
+    color: #f37021;
+    font-family: Impact;
+    font-weight: Regular;
+    font-size: 30px;
+    margin-top: -10px;
+    margin-left: 5px;
+    text-shadow:  -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000; /* Cor do contorno */
+    
+}
+
+
