@@ -1,6 +1,5 @@
 # BeSong
-O projeto BeSong é uma plataforma dedicada à conexão de artistas
-do ramo da música e pessoas que desejam contratar seus serviços.
+O BeSong é uma plataforma web online que conecta artistas do ramo da música com proprietários de restaurantes, bares, casas de shows ou particulares, facilitando a contratação de performances ao vivo. A ideia surgiu da necessidade de solucionar a desconexão entre artistas talentosos que buscam oportunidades de shows e proprietários de estabelecimentos que desejam diversificar suas opções de entretenimento de shows ao vivo.
    
 <!DOCTYPE html>
 <html lang="pt-BR">
