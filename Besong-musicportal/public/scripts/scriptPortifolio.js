@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 
 
                 document.querySelector('.video-div iframe').src = data.ytLink;           
-                document.getElementById('btn1').getElementsByTagName('a')[0].href = data.ytLink;            
-                document.getElementById('btn2').getElementsByTagName('a')[0].href = data.instagramLink;           
+                document.getElementById('btn1').getElementsByTagName('a')[0].href = data.ytLink;                                    
                 document.getElementById('btn3').getElementsByTagName('a')[0].href = data.wppLink;
+
 
     
 
