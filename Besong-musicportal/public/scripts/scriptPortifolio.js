@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (idArtista) {
 
-        fetch(`http://54.242.81.142:88/api/portifolio/${idArtista}`)
+        fetch(`http://54.226.24.115:88/api/portifolio/${idArtista}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar dados do artista');

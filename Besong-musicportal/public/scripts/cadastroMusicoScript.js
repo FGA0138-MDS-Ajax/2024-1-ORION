@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const descricao = document.getElementById('descricao').value;
         const isBanda = document.getElementById('isBanda').value;
 
-        fetch('http://54.242.81.142:80/api/musicos', {
+        fetch('http://54.226.24.115:80/api/musicos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

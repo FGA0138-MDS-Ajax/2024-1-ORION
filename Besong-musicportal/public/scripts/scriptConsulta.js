@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedValue = selectElement.value;
 
         if (selectedValue) {
-            const apiUrl = 'http://54.242.81.142:81/api/musicosList';
+            const apiUrl = 'http://54.226.24.115:81/api/musicosList';
 
             const requestData = {
                 estiloMusical: selectedValue
