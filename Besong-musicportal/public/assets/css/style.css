@@ -78,12 +78,6 @@ body {
 .input-box {
     width: calc(50% - 1rem);
     margin-bottom: 1rem;
-    
-}
-
-#cadastrar {
-    margin-left: -365px;
-    margin-top: 10px;
 }
 
 .input-box label {
@@ -170,7 +164,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: -70px;
+    margin-top: 1rem;
 }
 
 .gender-inputs label {
