@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (musico === 'musico') {
 
-            fetch('http://54.226.24.115:85/api/login', {
+            fetch('http://34.224.8.247:85/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         }else {
-            fetch('http://54.226.24.115:90/api/loginContratante', {
+            fetch('http://34.224.8.247:90/api/loginContratante', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
