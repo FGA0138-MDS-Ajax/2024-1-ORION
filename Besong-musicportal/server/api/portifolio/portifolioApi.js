@@ -10,7 +10,7 @@ app.use(cors());
 // Configuração do banco de dados usando createPool do mysql2
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "54.226.24.115",    // Host do seu banco de dados MySQL
+  host: "107.21.86.201",    // Host do seu banco de dados MySQL
   port: 3306,                // Porta do seu banco de dados MySQL
   user: "root",              // Usuário do seu banco de dados MySQL
   password: "1234",          // Senha do seu banco de dados MySQL

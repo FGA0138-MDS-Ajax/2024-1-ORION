@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
      
 
-        fetch('http://34.224.8.247:89/api/contratantes', {
+        fetch('http://107.21.86.201:89/api/contratantes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
