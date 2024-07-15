@@ -1,0 +1,1122 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../documento-requisitos/documento-requisitos/">
+      
+      
+        <link rel="next" href="../../sumario-executivo/sumario-executivo/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
+    
+    
+      
+        <title>Documento de Arquitetura - Documentação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.76a95c52.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introducao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Documentação" class="md-header__button md-logo" aria-label="Documentação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documento de Arquitetura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Sobre
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../documento-visao/documento-visao/" class="md-tabs__link">
+        
+  
+    
+  
+  Documento de Visão
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../documento-requisitos/documento-requisitos/" class="md-tabs__link">
+        
+  
+    
+  
+  Documento de Requisitos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Documento de Arquitetura
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sumario-executivo/sumario-executivo/" class="md-tabs__link">
+        
+  
+    
+  
+  Sumário Executivo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../atas-reuniao/ata-reuniao-1/" class="md-tabs__link">
+          
+  
+  Atas de Reunião
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentação" class="md-nav__button md-logo" aria-label="Documentação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Documentação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sobre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documento-visao/documento-visao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documento de Visão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documento-requisitos/documento-requisitos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documento de Requisitos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Documento de Arquitetura
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Documento de Arquitetura
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introdução
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Propósito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Escopo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Representação Arquitetural
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Representação Arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Definições
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Justificativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-detalhamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Detalhamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-metas-e-restricoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Metas e restrições arquiteturais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-visao-de-casos-de-uso-escopo-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Visão de Casos de uso (escopo do produto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-visao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Visão lógica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-visao-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Visão de implementação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-visao-de-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 Visão de Implantação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-restricoes-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Restrições Adicionais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-referencias-bibliograficas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Referências Bibliográficas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sumario-executivo/sumario-executivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sumário Executivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Atas de Reunião
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Atas de Reunião
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introdução
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Propósito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Escopo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Representação Arquitetural
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Representação Arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Definições
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Justificativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-detalhamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Detalhamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-metas-e-restricoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Metas e restrições arquiteturais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-visao-de-casos-de-uso-escopo-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Visão de Casos de uso (escopo do produto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-visao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Visão lógica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-visao-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Visão de implementação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-visao-de-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 Visão de Implantação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-restricoes-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Restrições Adicionais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-referencias-bibliograficas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Referências Bibliográficas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Documento de Arquitetura</h1>
+
+<h2 id="1-introducao"><strong>1 Introdução</strong></h2>
+<h3 id="11-proposito"><strong>1.1 Propósito</strong></h3>
+<p>Este documento descreve a arquitetura do sistema sendo desenvolvido pelo grupo Orion, na disciplina de MDS – Métodos de Desenvolvimento de Software – edição do primeiro semestre de 2024, BeSong,  a fim de fornecer uma visão abrangente do sistema para desenvolvedores, testadores e demais interessados. </p>
+<h3 id="12-escopo"><strong>1.2 Escopo</strong></h3>
+<p>O detalhamento do escopo se encontra no documento de visão do produto e do projeto. Porém, em linhas gerais o escopo do produto compreende em uma aplicação web com o objetivo de conectar com eficiência e transparência músicos e contratantes, assim facilitando a descoberta, contratação e agendamento de performances/shows ao vivo, resolvendo o problema de desconexão entre músicos, artistas e pessoas que queiram contratar seus serviços. </p>
+<h2 id="2-representacao-arquitetural"><strong>2 Representação Arquitetural</strong></h2>
+<h3 id="21-definicoes"><strong>2.1 Definições</strong></h3>
+<p>O sistema seguirá uma arquitetura de cliente-servidor. </p>
+<h3 id="22-justificativa"><strong>2.2 Justificativa</strong></h3>
+<p>A escolha do padrão de arquitetura cliente-servidor se deve por alguns fatores que se alinham com os requisitos do projeto, a experiência da equipe e objetivo final. A arquitetura cliente-servidor oferece uma abordagem simples de entender e implementar, sendo um dos motivos para a escolha, levando em consideração os conhecimentos da equipe e a busca por conhecer uma nova arquitetura. Com a arquitetura também pode concentrar-se mais na entrega de valor para o usuário final do que em aspectos técnicos complexos, ela permite uma divisão clara de responsabilidades entre o Front-End e o Back-End, facilitando o gerenciamento da complexidade do sistema. A separação de responsabilidades entre cliente e servidor facilita a manutenção e evolução do sistema ao longo do tempo, onde alterações no Front-End não devem impactar no Back-End e vice-versa, o que deixa mais fácil fazer atualizações ou adicionar novos recursos. </p>
+<h3 id="23-detalhamento"><strong>2.3 Detalhamento</strong></h3>
+<p>O Modelo Arquitetural de Cliente-Servidor, como já citado anteriormente, faz decomposição de tarefas entre os servidores, que são aqueles que provêm um recurso ou serviço, e os clientes, que são aqueles que solicitam os serviços. Um fator importante é que essa arquitetura é utilizada em aplicações web que é o caso do projeto BeSong aqui apresentado. </p>
+<p>Aprofundando um pouco mais no modelo arquitetural é interessante frisar que os clientes têm como função a interação com o usuário, enviando requisições ao servidor e apresentando os dados recebidos, muitas vezes representados pelo sistema Front-End. Em relação ao servidor, sua função é processar as requisições dos clientes e gerenciar os recursos como arquivos, banco de dados além do envio de respostas aos clientes, muitas vezes representado pelo sistema Back-End (TANENBAUM; WETHERALL, 2011). </p>
+<p>A comunicação realizada pelo modelo arquitetural Cliente-servidor pode implementar protocolos HTTP/HTTPS que é o caso do BeSong. Essa conexão pode ser síncrona ou assíncrona, onde o cliente pode continuar outras tarefas enquanto aguarda a resposta esperada. (SILBERSCHATZ; GALVIN; GAGNE, 2016). </p>
+<p>As principais características do modelo citado incluem: </p>
+<p>Divisão de tarefas entre Front e Back; </p>
+<p>Escalabilidade; </p>
+<p>Horizontalmente pela adição de servidores; </p>
+<p>Verticalmente a partir do aumento de recursos de hardware do servidor; </p>
+<p>Flexibilidade – Diferentes clientes podem interagir a partir do mesmo servidor; </p>
+<p>Segurança - Controles de acesso, autenticação e criptografia centralizados no servidor (KROENKE; AUER, 2017). </p>
+<div align="center">
+    <p><b>Figura 01:</b>Arquitetura Cliente-Servidor</p>
+</div>
+<p><img alt="figura 01" src="../../imagens/image4.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<h3 id="24-metas-e-restricoes-arquiteturais"><strong>2.4 Metas e restrições arquiteturais</strong></h3>
+<p>O Sistema deve ser capaz de lidar com um grande número de usuários simultâneos; </p>
+<p>Suportar o crescimento do volume de dados e requisições; </p>
+<p>Proteção dos dados a partir das transições utilizando protocolo HTTPS; </p>
+<p>Interface intuitiva e responsiva para o uso em qualquer plataforma; </p>
+<p>Realizar testes de usabilidade e o feedback do usuário; </p>
+<p>Manutenção facilitada a partir de uma arquitetura modular; </p>
+<p>Orçamento para infraestrutura é baixo e por esse motivo deve ser utilizado tecnologia Open-Source; </p>
+<p>Compatibilidade tecnológica é importante para que seja de fácil integração o back-end e Front-End; </p>
+<p>Conformidade com a LGPD; </p>
+<p>A infraestrutura deve ser limitada ao custo e a disponibilidade do hardware; </p>
+<h3 id="25-visao-de-casos-de-uso-escopo-do-produto"><strong>2.5 Visão de Casos de uso (escopo do produto)</strong></h3>
+<p>O projeto Besong visa de forma eficiente e transparente resolver o problema de desconexão entre músicos e contratantes, oferecendo um espaço onde ambas as partes possam se encontrar e interagir de forma confiável e simples. A arquitetura servidor-cliente deste produto permite centralizar o gerenciamento de dados e recursos, oferecendo uma experiência de usuário consistente, segura e escalável, promovendo um ambiente onde performances ao vivo podem ser facilmente descobertas, contratadas e agendadas. </p>
+<div align="center">
+    <p><b>Figura 02:</b>Caso de Uso</p>
+</div>
+<p><img alt="figura 02" src="../../imagens/image5.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<h3 id="26-visao-logica"><strong>2.6 Visão lógica</strong></h3>
+<div align="center">
+    <p><b>Figura 03:</b>Visão logica do produto</p>
+</div>
+<p><img alt="figura 03" src="../../imagens/image6.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<p>Descrição dos Componentes: </p>
+<p><strong>Client</strong> </p>
+<p>Navegador Web: Interface usada pelos usuários (músicos e contratantes) para interagir com a plataforma. </p>
+<p>Interface de Usuário (Front-End): Exibe informações e recebe entradas dos usuários. Inclui telas de login, cadastro, busca de músicos, gerenciamento de perfil, e agendamento. </p>
+<p>Comunicação com o Servidor (API): Módulo responsável por enviar e receber dados do servidor utilizando APIs RESTful. </p>
+<p><strong>Server</strong></p>
+<p>Gerenciador de Autenticação: Lida com login, logout e gerenciamento de sessões. Verifica credenciais e autentica usuários. </p>
+<p>Gerenciador de Perfis de Usuário: Permite aos usuários criar e editar seus perfis, incluindo informações pessoais, portfólio e preferências. </p>
+<p>Sistema de Busca e Filtros: Implementa a lógica de busca para que contratantes encontrem músicos baseados em critérios como gênero musical, localização, disponibilidade etc. </p>
+<p>Gerenciador de Contratações: Lida com a criação e o gerenciamento de propostas de contratação entre contratantes e músicos, incluindo negociações e aceitação de ofertas. </p>
+<p>Sistema de Agendamento: Gerencia a agenda de performances, permitindo que músicos e contratantes vejam disponibilidade e confirmem datas. </p>
+<p>Notificações e Comunicação: Envia notificações (e.g., e-mails, SMS) para atualizar usuários sobre status de contratações, eventos próximos, e outras comunicações importantes. </p>
+<p>Sistema de Pagamentos (API): Processa transações financeiras, garantindo pagamentos seguros entre contratantes e músicos. </p>
+<p>Banco de Dados: Armazena todas as informações da plataforma, incluindo perfis de usuários, detalhes de contratações, agendas, e transações financeiras. </p>
+<div align="center">
+    <p><b>Figura 04:</b>Diagrama de Fluxo do Usuário</p>
+</div>
+<p><img alt="figura 04" src="../../imagens/image7.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<p>Fluxo de Usuário: </p>
+<ol>
+<li>
+<p>Cadastro/Login: Músicos e contratantes se cadastrar ou fazer login na plataforma. </p>
+</li>
+<li>
+<p>Verificação: O servidor verifica as credenciais e autentica o usuário. </p>
+</li>
+<li>
+<p>Acesso ao Painel: O usuário autenticado acessa seu painel personalizado. </p>
+</li>
+<li>
+<p>Busca de Perfis: Contratantes buscam músicos e músicos buscam oportunidades. </p>
+</li>
+<li>
+<p>Resultados: O servidor retorna os resultados da busca com perfis ou oportunidades. </p>
+</li>
+<li>
+<p>Proposta de Contratação: Contratantes enviam propostas para músicos através da plataforma. </p>
+</li>
+<li>
+<p>Notificação: Músicos são notificados sobre novas propostas. </p>
+</li>
+<li>
+<p>Aceitar/Recusar: Músicos aceitam ou recusam propostas de contratação. </p>
+</li>
+<li>
+<p>Confirmação: O servidor confirma a aceitação ou recusa da proposta. </p>
+</li>
+<li>
+<p>Agendamento: Detalhes da apresentação são agendados e confirmados. </p>
+</li>
+<li>
+<p>Confirmação: O servidor confirma os detalhes do agendamento. </p>
+</li>
+<li>
+<p>Feedback: Após a apresentação, contratantes e músicos deixam feedback. </p>
+</li>
+<li>
+<p>Avaliação: O servidor atualiza as avaliações nos perfis de ambos. </p>
+</li>
+</ol>
+<div align="center">
+    <p><b>Figura 05:</b>Diagrama de Classes</p>
+</div>
+<p><img alt="figura 05" src="../../imagens/image8.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<p>O diagrama de classes conta com cinco classes, sendo elas as classes: </p>
+<p><strong>Usuário:</strong> que é a classe base para músicos e contratantes. </p>
+<p><strong>Músico:</strong> que possui herança em usuário, e além disso possui atributos específicos como a disponibilidade e também seu gênero musical. </p>
+<p><strong>Contratante:</strong> Subclasse de Usuário que representa contratantes, incluindo informações como empresa e CNPJ. </p>
+<p><strong>Contrato:</strong> Classe que gerencia os detalhes de um contrato de performance, incluindo datas e status. </p>
+<p><strong>Avaliação:</strong> Classe que gerencia as avaliações feitas pelos contratantes sobre as performances dos músicos. </p>
+<h3 id="27-visao-de-implementacao"><strong>2.7 Visão de implementação</strong></h3>
+<p>A arquitetura cliente-servidor é uma abordagem fundamental para o desenvolvimento de sistemas distribuídos e aplicações web. Nesta arquitetura, a separação de responsabilidades é clara: o cliente lida com a interação do usuário e a apresentação, enquanto o servidor gerencia a lógica de negócios, o acesso a dados e as funções de Back-End. </p>
+<p>Esta visão de implementação destaca a modularidade e a escalabilidade da arquitetura cliente-servidor, permitindo que equipes de desenvolvimento trabalhem de forma independente em diferentes partes do sistema, ao mesmo tempo em que mantêm uma integração coesa. </p>
+<div align="center">
+    <p><b>Figura 06:</b>Diagrama de Pacotes</p>
+</div>
+<p><img alt="figura 06" src="../../imagens/image9.png" /></p>
+<div align="center">
+    <p><b>Fonte:</b>Autoria própria</p>
+</div>
+
+<p>Camada de Apresentação (client/): </p>
+<p><strong>public/:</strong> Contém todos os ativos estáticos como HTML, CSS e imagens que são servidos diretamente ao navegador. Esta é a interface com os usuários. </p>
+<p><strong>src/:</strong> Inclui os scripts e componentes da aplicação que são compilados e empacotados para execução no lado do cliente. </p>
+<p><strong>package.json:</strong> Gerencia as dependências e scripts de construção do projeto do lado do cliente. </p>
+<p><strong>README.md:</strong> Fornece instruções e documentação sobre a aplicação cliente. </p>
+<p>Lógica de Negócios e Regras de Negócios (server/): </p>
+<p><strong>controllers/:</strong> Define os controladores que gerenciam as solicitações recebidas pelos clientes. </p>
+<p><strong>services/:</strong> Contém a lógica de negócios e a interação com os repositórios de dados. </p>
+<p><strong>middlewares/:</strong> Implementa funções intermediárias para processamento de requisições e respostas. </p>
+<p>Comunicação com o Banco de Dados (server/): </p>
+<p><strong>repositories/:</strong> Abstrai a lógica de acesso aos dados subjacentes. </p>
+<p><strong>models/:</strong> Representa as entidades de negócios e a estrutura de dados. </p>
+<p><strong>config/:</strong> Armazena configurações do aplicativo e inicialização do servidor. </p>
+<p><strong>utils/:</strong> Fornece utilitários e funções auxiliares para uso em todo o servidor. </p>
+<p><strong>app.js e server.js:</strong> Inicializam e configuram o servidor e a aplicação, respectivamente. </p>
+<p><strong>.gitignore:</strong> Especifica os arquivos e diretórios ignorados pelo Git. </p>
+<p><strong>package.json:</strong> Gerencia as dependências e scripts de construção do projeto do lado do servidor. </p>
+<p>OBS: O diagrama e os arquivos podem sofrer alterações ao longo do projeto. </p>
+<h3 id="28-visao-de-implantacao"><strong>2.8 Visão de Implantação</strong></h3>
+<p>Para a implementação do BeSong, serão utilizadas as seguintes tecnologias: HTML, CSS e JavaScript: para a criação, estilização e interatividade da interface do usuário, Node.js: utilizado no Back-End para permitir que os desenvolvedores possam usar JavaScript de forma eficiente, proporcionando um ambiente de execução rápido e escalável, MySQL: sistema de gerenciamento de banco de dados.</p>
+<p>A infraestrutura de hardware para a aplicação será projetada para garantir desempenho, escalabilidade e confiabilidade. A aplicação será hospedada em servidores Node.js, escolhidos por sua capacidade de lidar com operações de E/S assíncronas e escalabilidade eficiente, tornando-o ideal para aplicações web de alta performance. Outra escolha foi a AWS, que é uma das principais plataformas de nuvem do mercado, oferecendo uma infraestrutura robusta, segura e escalável. Seus serviços integrados permitem fácil implantação, monitoramento e manutenção das aplicações.</p>
+<p>O banco de dados MySQL será implementado para gerenciar os dados do projeto. Ele foi escolhido devido a escalabilidade: capacidade de lidar com um grande volume de dados e múltiplas transações simultâneas, segurança: funcionalidades avançadas de segurança para proteção dos dados dos usuários, confiabilidade: alta disponibilidade e suporte a recuperação de dados em caso de falhas, integração: facilidade de integração com o Node.js, permitindo uma comunicação eficiente entre o Back-End e o banco de dados.</p>
+<h3 id="29-restricoes-adicionais"><strong>2.9 Restrições Adicionais</strong></h3>
+<p>O sistema deve ser intuitivo e fácil de usar, com uma interface acessível para todos os usuários, pois a usabilidade melhora a satisfação do usuário e permite que os usuários realizem o acesso ao sistema de forma fácil e rápida; </p>
+<p>O software deve ser compatível com múltiplas plataformas, como diferentes navegadores e sistemas operacionais. Essa portabilidade permite que os usuários acessem o sistema em diversos ambientes, aumentando a flexibilidade e o alcance; </p>
+<p>O sistema deve ser de projetado de forma modular, facilitando correção de bugs e adição de novas funcionalidades, pois a manutenibilidade reduz os custos e o tempo de manutenção, permitindo uma evolução contínua em reposta às necessidades dos usuários;  </p>
+<h2 id="3-referencias-bibliograficas"><strong>3 Referências Bibliográficas</strong></h2>
+<p>TANENBAUM, Andrew S.; WETHERALL, David J. Redes de Computadores. 5. ed. São Paulo: Pearson, 2011. </p>
+<p>SILBERSCHATZ, Abraham; GALVIN, Peter B.; GAGNE, Greg. Fundamentos de Sistemas Operacionais. 9. ed. São Paulo: Pearson, 2016. </p>
+<p>KROENKE, David M.; AUER, David J. Banco de Dados: Projeto, Implementação e Administração. 12. ed. São Paulo: Pearson, 2017. </p>
+<p>GOÉS, Wilson M.; Aprenda UML Por Meio de Estudos de Casos. 1. ed. São Paulo: Novatec, 2014.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Versão</th>
+<th style="text-align: center;">Data</th>
+<th style="text-align: center;">Descrição da Alteração</th>
+<th style="text-align: center;">Nome(s) Integrante(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">19/05/2024</td>
+<td style="text-align: center;">Escrita do documento de arquitetura</td>
+<td style="text-align: center;">Brenno, Fernanda, Henrique, Victor, Paola, Davi, yuri</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">02/07/2024</td>
+<td style="text-align: center;">Reformulação das restrições adicionais</td>
+<td style="text-align: center;">Brenno da Silva</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
