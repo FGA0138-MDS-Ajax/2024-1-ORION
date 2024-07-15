@@ -18,6 +18,9 @@ O BeSong é uma plataforma web online que conecta artistas do ramo da música co
 - **Portfólio de Artistas**:
   Cada artista terá seu próprio portfólio, que terá um vídeo de apresentação, foto do artista ou da banda e um texto de apresentação.
 
+## Link para o site 
+http://23.20.106.105/index.html
+
 ## Para rodar o site de maneira local
 **Primeiramente**
 
