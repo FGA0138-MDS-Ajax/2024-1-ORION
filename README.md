@@ -25,7 +25,9 @@ O BeSong é uma plataforma web online que conecta artistas do ramo da música co
 - Verificar se as extensões estão atualizadas;
   
 **Segundo passo**: Clonar a branch desenvolvimento numa pasta de teste com o seguinte comando utilizando o GitBash (para maior simplicidade) ``` git clone -b desenvolvimento https://github.com/FGA0138-MDS-Ajax/2024-1-ORION.git ```
+
 **Terceiro passo**: Abrir a pasta onde a branch desenvolvimento se encontra no VS Code;
+
 **Quarto e último passo**: Rodar a página Index.html usando a extensão Live Code. (A extensão fica localizada no canto inferior direito do VS Code, basta apenas clicar nela que o site será lançado no seu navegador padrão.)
 
 ## Conheça a equipe
