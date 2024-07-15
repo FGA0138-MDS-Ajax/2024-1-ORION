@@ -19,20 +19,20 @@ O BeSong é uma plataforma web online que conecta artistas do ramo da música co
   Cada artista terá seu próprio portfólio, que terá um vídeo de apresentação, foto do artista ou da banda e um texto de apresentação.
 
 ## Para rodar o site de maneira local
-### Requisitos
+**Primeiramente**
 
 - Verificar se o GitBash está instalado na máquina;
 - Verificar se o npm está instalado na máquina;
 - Verificar se a extensão Live Code está instalada no VS Code;
 - Verificar se as extensões estão atualizadas;
   
-**Primeiro passo**: Clonar o repositório usando o seguinte comando ` git clone https://github.com/FGA0138-MDS-Ajax/2024-1-ORION.git `.
+**Segundo passo**: Clonar o repositório usando o seguinte comando ` git clone https://github.com/FGA0138-MDS-Ajax/2024-1-ORION.git `.
 
 Depois use: `git checkout desenvolvimento`
 
-**Segundo passo**: Abrir a pasta onde o repositório se encontra no VS Code;
+**Terceiro passo**: Abrir a pasta onde o repositório se encontra no VS Code;
 
-**Terceiro e último passo**: Rodar a página Index.html usando a extensão Live Code. (A extensão fica localizada no canto inferior direito do VS Code, basta apenas clicar nela que o site será lançado no seu navegador padrão.)
+**Quarto e último passo**: Rodar a página Index.html usando a extensão Live Code. (A extensão fica localizada no canto inferior direito do VS Code, basta apenas clicar nela que o site será lançado no seu navegador padrão.)
 
 ### Para rodar o código via terminal, é necessário utilizar os seguintes comandos:
 ```
